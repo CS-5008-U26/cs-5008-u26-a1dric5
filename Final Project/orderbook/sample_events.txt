@@ -1,0 +1,39 @@
+# sample_events.txt -- a scripted walk-through of every event type.
+# Prices are integer ticks (like real exchanges).  Order ids are
+# assigned 1, 2, 3, ... in the order the events arrive.
+
+# --- build up both sides of the book (none of these cross) ---
+LIMIT SELL 5001 12
+LIMIT SELL 5002 8
+LIMIT SELL 5003 5
+LIMIT BUY 4999 9
+LIMIT BUY 4998 20
+LIMIT BUY 4997 15
+BOOK
+
+# --- two orders at the SAME price: time priority demo ---
+# order #7 rests at 5001 BEHIND order #1 (which arrived first)
+LIMIT SELL 5001 4
+BOOK
+
+# --- a market buy sweeps the ask side ---
+# 14 contracts: fills all 12 of #1, then 2 of #7 (partial fill).
+# #1 filled before #7 = time priority in action.
+MARKET BUY 14
+BOOK
+
+# --- a crossing limit order ---
+# willing to sell at 4998, but the best bid is 4999 -- so it trades
+# at 4999 first (price improvement), then eats into 4998, and the
+# leftover would rest... let's size it to rest 3 at 4998.
+LIMIT SELL 4998 32
+BOOK
+
+# --- cancel a resting order ---
+# order #6 was LIMIT BUY 15 @ 4997; cancel it by side + price + id
+CANCEL BUY 4997 6
+BOOK
+
+# --- cancel that should FAIL (order already fully filled) ---
+CANCEL SELL 5001 1
+BOOK 10

@@ -1,0 +1,7 @@
+# compiled binaries (leading / anchors to this directory)
+/orderbook
+/test_avl
+# object files
+*.o
+# clang debug symbol bundles
+*.dSYM/

@@ -1,0 +1,1129 @@
+# simulating 500 events, trend 95%
+ORDER #1  LIMIT SELL 7 @ 5004
+REST  #1  SELL 7 @ 5004
+ORDER #2  LIMIT BUY 6 @ 4999
+REST  #2  BUY 6 @ 4999
+ORDER #3  LIMIT BUY 1 @ 5000
+REST  #3  BUY 1 @ 5000
+ORDER #4  LIMIT BUY 1 @ 5001
+REST  #4  BUY 1 @ 5001
+ORDER #5  MARKET BUY 7
+EXEC  7 @ 5004  (incoming #5 x resting #1)
+ORDER #6  LIMIT SELL 4 @ 5007
+REST  #6  SELL 4 @ 5007
+ORDER #7  MARKET BUY 8
+EXEC  4 @ 5007  (incoming #7 x resting #6)
+NOTE  #7  4 unfilled -- ask side of book is empty
+ORDER #8  LIMIT SELL 2 @ 5010
+REST  #8  SELL 2 @ 5010
+ORDER #9  MARKET BUY 8
+EXEC  2 @ 5010  (incoming #9 x resting #8)
+NOTE  #9  6 unfilled -- ask side of book is empty
+ORDER #10  LIMIT SELL 5 @ 5011
+REST  #10  SELL 5 @ 5011
+ORDER #11  LIMIT BUY 7 @ 5009
+REST  #11  BUY 7 @ 5009
+ORDER #12  LIMIT SELL 9 @ 5013
+REST  #12  SELL 9 @ 5013
+ORDER #13  MARKET BUY 6
+EXEC  5 @ 5011  (incoming #13 x resting #10)
+EXEC  1 @ 5013  (incoming #13 x resting #12)
+ORDER #14  MARKET SELL 11
+EXEC  7 @ 5009  (incoming #14 x resting #11)
+EXEC  1 @ 5001  (incoming #14 x resting #4)
+EXEC  1 @ 5000  (incoming #14 x resting #3)
+EXEC  2 @ 4999  (incoming #14 x resting #2)
+ORDER #15  LIMIT SELL 6 @ 5016
+REST  #15  SELL 6 @ 5016
+ORDER #16  LIMIT SELL 7 @ 5018
+REST  #16  SELL 7 @ 5018
+ORDER #17  LIMIT BUY 5 @ 5014
+EXEC  5 @ 5013  (incoming #17 x resting #12)
+ORDER #18  LIMIT BUY 3 @ 5015
+EXEC  3 @ 5013  (incoming #18 x resting #12)
+ORDER #19  LIMIT BUY 8 @ 5017
+EXEC  6 @ 5016  (incoming #19 x resting #15)
+REST  #19  BUY 2 @ 5017
+ORDER #20  LIMIT BUY 7 @ 5019
+EXEC  7 @ 5018  (incoming #20 x resting #16)
+ORDER #21  MARKET SELL 5
+EXEC  2 @ 5017  (incoming #21 x resting #19)
+EXEC  3 @ 4999  (incoming #21 x resting #2)
+ORDER #22  LIMIT SELL 8 @ 5023
+REST  #22  SELL 8 @ 5023
+ORDER #23  LIMIT SELL 5 @ 5026
+REST  #23  SELL 5 @ 5026
+CANCEL #12 FAILED: no SELL level at 5013
+ORDER #24  LIMIT BUY 3 @ 5023
+EXEC  3 @ 5023  (incoming #24 x resting #22)
+ORDER #25  LIMIT SELL 8 @ 5027
+REST  #25  SELL 8 @ 5027
+ORDER #26  LIMIT SELL 4 @ 5029
+REST  #26  SELL 4 @ 5029
+ORDER #27  LIMIT SELL 2 @ 5031
+REST  #27  SELL 2 @ 5031
+ORDER #28  LIMIT BUY 1 @ 5026
+EXEC  1 @ 5023  (incoming #28 x resting #22)
+ORDER #29  LIMIT SELL 3 @ 5031
+REST  #29  SELL 3 @ 5031
+ORDER #30  LIMIT SELL 6 @ 5033
+REST  #30  SELL 6 @ 5033
+ORDER #31  LIMIT BUY 7 @ 5029
+EXEC  4 @ 5023  (incoming #31 x resting #22)
+EXEC  3 @ 5026  (incoming #31 x resting #23)
+ORDER #32  LIMIT SELL 4 @ 5035
+REST  #32  SELL 4 @ 5035
+ORDER #33  MARKET SELL 12
+EXEC  1 @ 4999  (incoming #33 x resting #2)
+NOTE  #33  11 unfilled -- bid side of book is empty
+CANCEL #6 FAILED: no SELL level at 5007
+ORDER #34  LIMIT SELL 10 @ 5038
+REST  #34  SELL 10 @ 5038
+ORDER #35  LIMIT SELL 5 @ 5038
+REST  #35  SELL 5 @ 5038
+ORDER #36  MARKET BUY 14
+EXEC  2 @ 5026  (incoming #36 x resting #23)
+EXEC  8 @ 5027  (incoming #36 x resting #25)
+EXEC  4 @ 5029  (incoming #36 x resting #26)
+ORDER #37  MARKET BUY 4
+EXEC  2 @ 5031  (incoming #37 x resting #27)
+EXEC  2 @ 5031  (incoming #37 x resting #29)
+ORDER #38  LIMIT SELL 7 @ 5041
+REST  #38  SELL 7 @ 5041
+CANCEL #31 FAILED: no BUY level at 5029
+ORDER #39  LIMIT SELL 4 @ 5045
+REST  #39  SELL 4 @ 5045
+ORDER #40  LIMIT BUY 7 @ 5042
+EXEC  1 @ 5031  (incoming #40 x resting #29)
+EXEC  6 @ 5033  (incoming #40 x resting #30)
+ORDER #41  LIMIT SELL 10 @ 5047
+REST  #41  SELL 10 @ 5047
+ORDER #42  MARKET SELL 6
+NOTE  #42  6 unfilled -- bid side of book is empty
+CANCEL #3 FAILED: no BUY level at 5000
+ORDER #43  LIMIT BUY 6 @ 5046
+EXEC  4 @ 5035  (incoming #43 x resting #32)
+EXEC  2 @ 5038  (incoming #43 x resting #34)
+ORDER #44  LIMIT BUY 3 @ 5045
+EXEC  3 @ 5038  (incoming #44 x resting #34)
+CANCEL #28 FAILED: no BUY level at 5026
+CANCEL #10 FAILED: no SELL level at 5011
+ORDER #45  LIMIT BUY 5 @ 5044
+EXEC  5 @ 5038  (incoming #45 x resting #34)
+ORDER #46  LIMIT SELL 5 @ 5049
+REST  #46  SELL 5 @ 5049
+ORDER #47  LIMIT SELL 8 @ 5050
+REST  #47  SELL 8 @ 5050
+ORDER #48  LIMIT BUY 5 @ 5048
+EXEC  5 @ 5038  (incoming #48 x resting #35)
+ORDER #49  LIMIT BUY 3 @ 5050
+EXEC  3 @ 5041  (incoming #49 x resting #38)
+ORDER #50  LIMIT SELL 7 @ 5055
+REST  #50  SELL 7 @ 5055
+ORDER #51  LIMIT SELL 8 @ 5056
+REST  #51  SELL 8 @ 5056
+ORDER #52  LIMIT BUY 5 @ 5052
+EXEC  4 @ 5041  (incoming #52 x resting #38)
+EXEC  1 @ 5045  (incoming #52 x resting #39)
+ORDER #53  LIMIT SELL 9 @ 5056
+REST  #53  SELL 9 @ 5056
+ORDER #54  LIMIT SELL 5 @ 5058
+REST  #54  SELL 5 @ 5058
+ORDER #55  MARKET BUY 10
+EXEC  3 @ 5045  (incoming #55 x resting #39)
+EXEC  7 @ 5047  (incoming #55 x resting #41)
+ORDER #56  LIMIT BUY 2 @ 5055
+EXEC  2 @ 5047  (incoming #56 x resting #41)
+ORDER #57  LIMIT SELL 7 @ 5062
+REST  #57  SELL 7 @ 5062
+ORDER #58  LIMIT SELL 4 @ 5061
+REST  #58  SELL 4 @ 5061
+ORDER #59  LIMIT SELL 2 @ 5061
+REST  #59  SELL 2 @ 5061
+ORDER #60  LIMIT BUY 8 @ 5057
+EXEC  1 @ 5047  (incoming #60 x resting #41)
+EXEC  5 @ 5049  (incoming #60 x resting #46)
+EXEC  2 @ 5050  (incoming #60 x resting #47)
+ORDER #61  LIMIT BUY 3 @ 5059
+EXEC  3 @ 5050  (incoming #61 x resting #47)
+ORDER #62  LIMIT SELL 3 @ 5064
+REST  #62  SELL 3 @ 5064
+ORDER #63  LIMIT BUY 4 @ 5060
+EXEC  3 @ 5050  (incoming #63 x resting #47)
+EXEC  1 @ 5055  (incoming #63 x resting #50)
+ORDER #64  LIMIT SELL 6 @ 5067
+REST  #64  SELL 6 @ 5067
+ORDER #65  LIMIT BUY 2 @ 5062
+EXEC  2 @ 5055  (incoming #65 x resting #50)
+ORDER #66  LIMIT SELL 2 @ 5069
+REST  #66  SELL 2 @ 5069
+ORDER #67  LIMIT BUY 5 @ 5064
+EXEC  4 @ 5055  (incoming #67 x resting #50)
+EXEC  1 @ 5056  (incoming #67 x resting #51)
+ORDER #68  LIMIT BUY 8 @ 5067
+EXEC  7 @ 5056  (incoming #68 x resting #51)
+EXEC  1 @ 5056  (incoming #68 x resting #53)
+ORDER #69  LIMIT SELL 10 @ 5070
+REST  #69  SELL 10 @ 5070
+ORDER #70  LIMIT SELL 9 @ 5071
+REST  #70  SELL 9 @ 5071
+ORDER #71  MARKET SELL 9
+NOTE  #71  9 unfilled -- bid side of book is empty
+CANCEL #59  removed 2 @ 5061
+ORDER #72  LIMIT SELL 1 @ 5076
+REST  #72  SELL 1 @ 5076
+ORDER #73  LIMIT SELL 1 @ 5077
+REST  #73  SELL 1 @ 5077
+ORDER #74  LIMIT SELL 1 @ 5076
+REST  #74  SELL 1 @ 5076
+ORDER #75  LIMIT SELL 4 @ 5078
+REST  #75  SELL 4 @ 5078
+ORDER #76  LIMIT BUY 9 @ 5076
+EXEC  8 @ 5056  (incoming #76 x resting #53)
+EXEC  1 @ 5058  (incoming #76 x resting #54)
+ORDER #77  MARKET SELL 1
+NOTE  #77  1 unfilled -- bid side of book is empty
+ORDER #78  MARKET SELL 2
+NOTE  #78  2 unfilled -- bid side of book is empty
+CANCEL #28 FAILED: no BUY level at 5026
+ORDER #79  LIMIT SELL 7 @ 5083
+REST  #79  SELL 7 @ 5083
+ORDER #80  MARKET SELL 15
+NOTE  #80  15 unfilled -- bid side of book is empty
+ORDER #81  LIMIT BUY 3 @ 5082
+EXEC  3 @ 5058  (incoming #81 x resting #54)
+ORDER #82  LIMIT BUY 3 @ 5083
+EXEC  1 @ 5058  (incoming #82 x resting #54)
+EXEC  2 @ 5061  (incoming #82 x resting #58)
+ORDER #83  LIMIT BUY 6 @ 5082
+EXEC  2 @ 5061  (incoming #83 x resting #58)
+EXEC  4 @ 5062  (incoming #83 x resting #57)
+ORDER #84  LIMIT BUY 8 @ 5084
+EXEC  3 @ 5062  (incoming #84 x resting #57)
+EXEC  3 @ 5064  (incoming #84 x resting #62)
+EXEC  2 @ 5067  (incoming #84 x resting #64)
+ORDER #85  LIMIT SELL 4 @ 5087
+REST  #85  SELL 4 @ 5087
+ORDER #86  LIMIT SELL 6 @ 5089
+REST  #86  SELL 6 @ 5089
+ORDER #87  MARKET SELL 6
+NOTE  #87  6 unfilled -- bid side of book is empty
+ORDER #88  MARKET SELL 9
+NOTE  #88  9 unfilled -- bid side of book is empty
+ORDER #89  LIMIT SELL 8 @ 5092
+REST  #89  SELL 8 @ 5092
+ORDER #90  LIMIT BUY 1 @ 5088
+EXEC  1 @ 5067  (incoming #90 x resting #64)
+ORDER #91  LIMIT SELL 4 @ 5094
+REST  #91  SELL 4 @ 5094
+ORDER #92  LIMIT SELL 6 @ 5093
+REST  #92  SELL 6 @ 5093
+ORDER #93  LIMIT BUY 1 @ 5090
+EXEC  1 @ 5067  (incoming #93 x resting #64)
+ORDER #94  LIMIT SELL 10 @ 5095
+REST  #94  SELL 10 @ 5095
+ORDER #95  LIMIT SELL 9 @ 5097
+REST  #95  SELL 9 @ 5097
+ORDER #96  MARKET BUY 5
+EXEC  2 @ 5067  (incoming #96 x resting #64)
+EXEC  2 @ 5069  (incoming #96 x resting #66)
+EXEC  1 @ 5070  (incoming #96 x resting #69)
+ORDER #97  MARKET SELL 2
+NOTE  #97  2 unfilled -- bid side of book is empty
+ORDER #98  LIMIT BUY 4 @ 5095
+EXEC  4 @ 5070  (incoming #98 x resting #69)
+ORDER #99  LIMIT SELL 4 @ 5101
+REST  #99  SELL 4 @ 5101
+ORDER #100  LIMIT SELL 8 @ 5101
+REST  #100  SELL 8 @ 5101
+ORDER #101  LIMIT BUY 2 @ 5099
+EXEC  2 @ 5070  (incoming #101 x resting #69)
+CANCEL #82 FAILED: no BUY level at 5083
+ORDER #102  MARKET BUY 1
+EXEC  1 @ 5070  (incoming #102 x resting #69)
+CANCEL #43 FAILED: no BUY level at 5046
+ORDER #103  LIMIT BUY 7 @ 5103
+EXEC  2 @ 5070  (incoming #103 x resting #69)
+EXEC  5 @ 5071  (incoming #103 x resting #70)
+ORDER #104  LIMIT SELL 6 @ 5107
+REST  #104  SELL 6 @ 5107
+ORDER #105  MARKET SELL 10
+NOTE  #105  10 unfilled -- bid side of book is empty
+ORDER #106  LIMIT BUY 7 @ 5106
+EXEC  4 @ 5071  (incoming #106 x resting #70)
+EXEC  1 @ 5076  (incoming #106 x resting #72)
+EXEC  1 @ 5076  (incoming #106 x resting #74)
+EXEC  1 @ 5077  (incoming #106 x resting #73)
+ORDER #107  LIMIT BUY 4 @ 5107
+EXEC  4 @ 5078  (incoming #107 x resting #75)
+ORDER #108  LIMIT SELL 9 @ 5111
+REST  #108  SELL 9 @ 5111
+ORDER #109  LIMIT SELL 10 @ 5114
+REST  #109  SELL 10 @ 5114
+ORDER #110  LIMIT BUY 7 @ 5109
+EXEC  7 @ 5083  (incoming #110 x resting #79)
+ORDER #111  MARKET SELL 15
+NOTE  #111  15 unfilled -- bid side of book is empty
+ORDER #112  LIMIT SELL 7 @ 5115
+REST  #112  SELL 7 @ 5115
+ORDER #113  LIMIT BUY 4 @ 5111
+EXEC  4 @ 5087  (incoming #113 x resting #85)
+ORDER #114  LIMIT SELL 4 @ 5115
+REST  #114  SELL 4 @ 5115
+ORDER #115  LIMIT SELL 2 @ 5116
+REST  #115  SELL 2 @ 5116
+ORDER #116  LIMIT SELL 2 @ 5117
+REST  #116  SELL 2 @ 5117
+ORDER #117  LIMIT BUY 7 @ 5115
+EXEC  6 @ 5089  (incoming #117 x resting #86)
+EXEC  1 @ 5092  (incoming #117 x resting #89)
+ORDER #118  LIMIT SELL 4 @ 5119
+REST  #118  SELL 4 @ 5119
+ORDER #119  LIMIT SELL 5 @ 5122
+REST  #119  SELL 5 @ 5122
+ORDER #120  LIMIT SELL 10 @ 5121
+REST  #120  SELL 10 @ 5121
+CANCEL #52 FAILED: no BUY level at 5052
+ORDER #121  LIMIT BUY 10 @ 5120
+EXEC  7 @ 5092  (incoming #121 x resting #89)
+EXEC  3 @ 5093  (incoming #121 x resting #92)
+ORDER #122  MARKET BUY 9
+EXEC  3 @ 5093  (incoming #122 x resting #92)
+EXEC  4 @ 5094  (incoming #122 x resting #91)
+EXEC  2 @ 5095  (incoming #122 x resting #94)
+ORDER #123  LIMIT BUY 8 @ 5121
+EXEC  8 @ 5095  (incoming #123 x resting #94)
+ORDER #124  LIMIT BUY 10 @ 5122
+EXEC  9 @ 5097  (incoming #124 x resting #95)
+EXEC  1 @ 5101  (incoming #124 x resting #99)
+CANCEL #124 FAILED: no BUY level at 5122
+ORDER #125  LIMIT BUY 9 @ 5125
+EXEC  3 @ 5101  (incoming #125 x resting #99)
+EXEC  6 @ 5101  (incoming #125 x resting #100)
+ORDER #126  LIMIT SELL 6 @ 5130
+REST  #126  SELL 6 @ 5130
+ORDER #127  LIMIT BUY 1 @ 5126
+EXEC  1 @ 5101  (incoming #127 x resting #100)
+CANCEL #90 FAILED: no BUY level at 5088
+ORDER #128  MARKET BUY 6
+EXEC  1 @ 5101  (incoming #128 x resting #100)
+EXEC  5 @ 5107  (incoming #128 x resting #104)
+CANCEL #115  removed 2 @ 5116
+ORDER #129  LIMIT SELL 5 @ 5136
+REST  #129  SELL 5 @ 5136
+ORDER #130  LIMIT BUY 3 @ 5131
+EXEC  1 @ 5107  (incoming #130 x resting #104)
+EXEC  2 @ 5111  (incoming #130 x resting #108)
+CANCEL #64 FAILED: no SELL level at 5067
+ORDER #131  LIMIT BUY 10 @ 5133
+EXEC  7 @ 5111  (incoming #131 x resting #108)
+EXEC  3 @ 5114  (incoming #131 x resting #109)
+ORDER #132  LIMIT SELL 9 @ 5138
+REST  #132  SELL 9 @ 5138
+ORDER #133  LIMIT BUY 5 @ 5137
+EXEC  5 @ 5114  (incoming #133 x resting #109)
+ORDER #134  LIMIT BUY 9 @ 5138
+EXEC  2 @ 5114  (incoming #134 x resting #109)
+EXEC  7 @ 5115  (incoming #134 x resting #112)
+ORDER #135  LIMIT BUY 1 @ 5138
+EXEC  1 @ 5115  (incoming #135 x resting #114)
+ORDER #136  LIMIT BUY 10 @ 5139
+EXEC  3 @ 5115  (incoming #136 x resting #114)
+EXEC  2 @ 5117  (incoming #136 x resting #116)
+EXEC  4 @ 5119  (incoming #136 x resting #118)
+EXEC  1 @ 5121  (incoming #136 x resting #120)
+ORDER #137  LIMIT BUY 3 @ 5141
+EXEC  3 @ 5121  (incoming #137 x resting #120)
+ORDER #138  MARKET BUY 6
+EXEC  6 @ 5121  (incoming #138 x resting #120)
+CANCEL #91 FAILED: no SELL level at 5094
+ORDER #139  LIMIT BUY 8 @ 5142
+EXEC  5 @ 5122  (incoming #139 x resting #119)
+EXEC  3 @ 5130  (incoming #139 x resting #126)
+ORDER #140  LIMIT SELL 8 @ 5148
+REST  #140  SELL 8 @ 5148
+ORDER #141  MARKET SELL 5
+NOTE  #141  5 unfilled -- bid side of book is empty
+ORDER #142  MARKET SELL 6
+NOTE  #142  6 unfilled -- bid side of book is empty
+ORDER #143  LIMIT SELL 3 @ 5151
+REST  #143  SELL 3 @ 5151
+ORDER #144  LIMIT SELL 9 @ 5153
+REST  #144  SELL 9 @ 5153
+ORDER #145  MARKET BUY 12
+EXEC  3 @ 5130  (incoming #145 x resting #126)
+EXEC  5 @ 5136  (incoming #145 x resting #129)
+EXEC  4 @ 5138  (incoming #145 x resting #132)
+ORDER #146  LIMIT SELL 8 @ 5155
+REST  #146  SELL 8 @ 5155
+ORDER #147  LIMIT SELL 8 @ 5154
+REST  #147  SELL 8 @ 5154
+ORDER #148  MARKET SELL 2
+NOTE  #148  2 unfilled -- bid side of book is empty
+CANCEL #133 FAILED: no BUY level at 5137
+CANCEL #110 FAILED: no BUY level at 5109
+ORDER #149  LIMIT SELL 10 @ 5159
+REST  #149  SELL 10 @ 5159
+CANCEL #133 FAILED: no BUY level at 5137
+ORDER #150  MARKET BUY 7
+EXEC  5 @ 5138  (incoming #150 x resting #132)
+EXEC  2 @ 5148  (incoming #150 x resting #140)
+ORDER #151  MARKET SELL 10
+NOTE  #151  10 unfilled -- bid side of book is empty
+ORDER #152  LIMIT BUY 8 @ 5158
+EXEC  6 @ 5148  (incoming #152 x resting #140)
+EXEC  2 @ 5151  (incoming #152 x resting #143)
+ORDER #153  MARKET SELL 4
+NOTE  #153  4 unfilled -- bid side of book is empty
+ORDER #154  LIMIT BUY 1 @ 5160
+EXEC  1 @ 5151  (incoming #154 x resting #143)
+ORDER #155  LIMIT SELL 6 @ 5165
+REST  #155  SELL 6 @ 5165
+CANCEL #82 FAILED: no BUY level at 5083
+ORDER #156  LIMIT BUY 1 @ 5163
+EXEC  1 @ 5153  (incoming #156 x resting #144)
+ORDER #157  MARKET SELL 13
+NOTE  #157  13 unfilled -- bid side of book is empty
+ORDER #158  LIMIT BUY 10 @ 5165
+EXEC  8 @ 5153  (incoming #158 x resting #144)
+EXEC  2 @ 5154  (incoming #158 x resting #147)
+CANCEL #132 FAILED: no SELL level at 5138
+CANCEL #89 FAILED: no SELL level at 5092
+ORDER #159  LIMIT SELL 9 @ 5174
+REST  #159  SELL 9 @ 5174
+ORDER #160  LIMIT BUY 5 @ 5170
+EXEC  5 @ 5154  (incoming #160 x resting #147)
+ORDER #161  LIMIT BUY 8 @ 5170
+EXEC  1 @ 5154  (incoming #161 x resting #147)
+EXEC  7 @ 5155  (incoming #161 x resting #146)
+CANCEL #93 FAILED: no BUY level at 5090
+ORDER #162  LIMIT BUY 8 @ 5173
+EXEC  1 @ 5155  (incoming #162 x resting #146)
+EXEC  7 @ 5159  (incoming #162 x resting #149)
+ORDER #163  MARKET BUY 9
+EXEC  3 @ 5159  (incoming #163 x resting #149)
+EXEC  6 @ 5165  (incoming #163 x resting #155)
+ORDER #164  LIMIT BUY 1 @ 5176
+EXEC  1 @ 5174  (incoming #164 x resting #159)
+ORDER #165  LIMIT BUY 5 @ 5177
+EXEC  5 @ 5174  (incoming #165 x resting #159)
+ORDER #166  LIMIT BUY 7 @ 5178
+EXEC  3 @ 5174  (incoming #166 x resting #159)
+REST  #166  BUY 4 @ 5178
+ORDER #167  LIMIT SELL 7 @ 5183
+REST  #167  SELL 7 @ 5183
+CANCEL #130 FAILED: no BUY level at 5131
+ORDER #168  LIMIT BUY 3 @ 5181
+REST  #168  BUY 3 @ 5181
+ORDER #169  LIMIT BUY 1 @ 5180
+REST  #169  BUY 1 @ 5180
+ORDER #170  LIMIT SELL 1 @ 5186
+REST  #170  SELL 1 @ 5186
+CANCEL #161 FAILED: no BUY level at 5170
+ORDER #171  MARKET BUY 8
+EXEC  7 @ 5183  (incoming #171 x resting #167)
+EXEC  1 @ 5186  (incoming #171 x resting #170)
+ORDER #172  LIMIT SELL 6 @ 5186
+REST  #172  SELL 6 @ 5186
+ORDER #173  MARKET SELL 4
+EXEC  3 @ 5181  (incoming #173 x resting #168)
+EXEC  1 @ 5180  (incoming #173 x resting #169)
+CANCEL #93 FAILED: no BUY level at 5090
+CANCEL #91 FAILED: no SELL level at 5094
+ORDER #174  LIMIT BUY 9 @ 5188
+EXEC  6 @ 5186  (incoming #174 x resting #172)
+REST  #174  BUY 3 @ 5188
+ORDER #175  MARKET SELL 11
+EXEC  3 @ 5188  (incoming #175 x resting #174)
+EXEC  4 @ 5178  (incoming #175 x resting #166)
+NOTE  #175  4 unfilled -- bid side of book is empty
+ORDER #176  MARKET SELL 4
+NOTE  #176  4 unfilled -- bid side of book is empty
+CANCEL #120 FAILED: no SELL level at 5121
+ORDER #177  LIMIT SELL 4 @ 5194
+REST  #177  SELL 4 @ 5194
+CANCEL #147 FAILED: no SELL level at 5154
+ORDER #178  LIMIT SELL 9 @ 5196
+REST  #178  SELL 9 @ 5196
+ORDER #179  MARKET SELL 6
+NOTE  #179  6 unfilled -- bid side of book is empty
+ORDER #180  LIMIT BUY 10 @ 5192
+REST  #180  BUY 10 @ 5192
+ORDER #181  LIMIT SELL 7 @ 5199
+REST  #181  SELL 7 @ 5199
+ORDER #182  LIMIT BUY 4 @ 5196
+EXEC  4 @ 5194  (incoming #182 x resting #177)
+ORDER #183  LIMIT SELL 8 @ 5201
+REST  #183  SELL 8 @ 5201
+ORDER #184  MARKET SELL 8
+EXEC  8 @ 5192  (incoming #184 x resting #180)
+ORDER #185  LIMIT BUY 2 @ 5197
+EXEC  2 @ 5196  (incoming #185 x resting #178)
+ORDER #186  LIMIT BUY 10 @ 5199
+EXEC  7 @ 5196  (incoming #186 x resting #178)
+EXEC  3 @ 5199  (incoming #186 x resting #181)
+CANCEL #186 FAILED: no BUY level at 5199
+ORDER #187  MARKET SELL 12
+EXEC  2 @ 5192  (incoming #187 x resting #180)
+NOTE  #187  10 unfilled -- bid side of book is empty
+ORDER #188  LIMIT BUY 2 @ 5200
+EXEC  2 @ 5199  (incoming #188 x resting #181)
+ORDER #189  LIMIT SELL 2 @ 5206
+REST  #189  SELL 2 @ 5206
+ORDER #190  LIMIT BUY 4 @ 5203
+EXEC  2 @ 5199  (incoming #190 x resting #181)
+EXEC  2 @ 5201  (incoming #190 x resting #183)
+ORDER #191  LIMIT SELL 1 @ 5207
+REST  #191  SELL 1 @ 5207
+ORDER #192  LIMIT BUY 4 @ 5204
+EXEC  4 @ 5201  (incoming #192 x resting #183)
+CANCEL #121 FAILED: no BUY level at 5120
+ORDER #193  LIMIT BUY 7 @ 5205
+EXEC  2 @ 5201  (incoming #193 x resting #183)
+REST  #193  BUY 5 @ 5205
+ORDER #194  LIMIT SELL 6 @ 5210
+REST  #194  SELL 6 @ 5210
+ORDER #195  MARKET SELL 4
+EXEC  4 @ 5205  (incoming #195 x resting #193)
+ORDER #196  MARKET SELL 2
+EXEC  1 @ 5205  (incoming #196 x resting #193)
+NOTE  #196  1 unfilled -- bid side of book is empty
+ORDER #197  LIMIT SELL 2 @ 5213
+REST  #197  SELL 2 @ 5213
+ORDER #198  LIMIT SELL 6 @ 5213
+REST  #198  SELL 6 @ 5213
+ORDER #199  LIMIT BUY 1 @ 5210
+EXEC  1 @ 5206  (incoming #199 x resting #189)
+CANCEL #172 FAILED: no SELL level at 5186
+ORDER #200  LIMIT SELL 5 @ 5217
+REST  #200  SELL 5 @ 5217
+ORDER #201  MARKET BUY 2
+EXEC  1 @ 5206  (incoming #201 x resting #189)
+EXEC  1 @ 5207  (incoming #201 x resting #191)
+ORDER #202  LIMIT BUY 6 @ 5214
+EXEC  6 @ 5210  (incoming #202 x resting #194)
+ORDER #203  LIMIT SELL 7 @ 5218
+REST  #203  SELL 7 @ 5218
+ORDER #204  LIMIT BUY 1 @ 5216
+EXEC  1 @ 5213  (incoming #204 x resting #197)
+ORDER #205  LIMIT BUY 5 @ 5217
+EXEC  1 @ 5213  (incoming #205 x resting #197)
+EXEC  4 @ 5213  (incoming #205 x resting #198)
+ORDER #206  LIMIT SELL 3 @ 5221
+REST  #206  SELL 3 @ 5221
+ORDER #207  LIMIT BUY 10 @ 5220
+EXEC  2 @ 5213  (incoming #207 x resting #198)
+EXEC  5 @ 5217  (incoming #207 x resting #200)
+EXEC  3 @ 5218  (incoming #207 x resting #203)
+ORDER #208  LIMIT BUY 8 @ 5221
+EXEC  4 @ 5218  (incoming #208 x resting #203)
+EXEC  3 @ 5221  (incoming #208 x resting #206)
+REST  #208  BUY 1 @ 5221
+ORDER #209  MARKET SELL 3
+EXEC  1 @ 5221  (incoming #209 x resting #208)
+NOTE  #209  2 unfilled -- bid side of book is empty
+ORDER #210  LIMIT BUY 2 @ 5222
+REST  #210  BUY 2 @ 5222
+ORDER #211  LIMIT SELL 4 @ 5227
+REST  #211  SELL 4 @ 5227
+ORDER #212  MARKET SELL 15
+EXEC  2 @ 5222  (incoming #212 x resting #210)
+NOTE  #212  13 unfilled -- bid side of book is empty
+ORDER #213  LIMIT SELL 9 @ 5229
+REST  #213  SELL 9 @ 5229
+CANCEL #170 FAILED: no SELL level at 5186
+ORDER #214  LIMIT BUY 5 @ 5228
+EXEC  4 @ 5227  (incoming #214 x resting #211)
+REST  #214  BUY 1 @ 5228
+ORDER #215  LIMIT SELL 5 @ 5232
+REST  #215  SELL 5 @ 5232
+ORDER #216  LIMIT BUY 5 @ 5229
+EXEC  5 @ 5229  (incoming #216 x resting #213)
+ORDER #217  LIMIT SELL 1 @ 5234
+REST  #217  SELL 1 @ 5234
+ORDER #218  LIMIT SELL 7 @ 5234
+REST  #218  SELL 7 @ 5234
+ORDER #219  MARKET SELL 13
+EXEC  1 @ 5228  (incoming #219 x resting #214)
+NOTE  #219  12 unfilled -- bid side of book is empty
+ORDER #220  LIMIT BUY 7 @ 5234
+EXEC  4 @ 5229  (incoming #220 x resting #213)
+EXEC  3 @ 5232  (incoming #220 x resting #215)
+ORDER #221  LIMIT BUY 10 @ 5235
+EXEC  2 @ 5232  (incoming #221 x resting #215)
+EXEC  1 @ 5234  (incoming #221 x resting #217)
+EXEC  7 @ 5234  (incoming #221 x resting #218)
+ORDER #222  LIMIT BUY 2 @ 5235
+REST  #222  BUY 2 @ 5235
+ORDER #223  LIMIT BUY 3 @ 5237
+REST  #223  BUY 3 @ 5237
+ORDER #224  MARKET BUY 8
+NOTE  #224  8 unfilled -- ask side of book is empty
+ORDER #225  LIMIT BUY 4 @ 5237
+REST  #225  BUY 4 @ 5237
+ORDER #226  LIMIT SELL 8 @ 5243
+REST  #226  SELL 8 @ 5243
+ORDER #227  LIMIT SELL 6 @ 5244
+REST  #227  SELL 6 @ 5244
+ORDER #228  MARKET BUY 13
+EXEC  8 @ 5243  (incoming #228 x resting #226)
+EXEC  5 @ 5244  (incoming #228 x resting #227)
+ORDER #229  LIMIT SELL 9 @ 5246
+REST  #229  SELL 9 @ 5246
+ORDER #230  MARKET SELL 12
+EXEC  3 @ 5237  (incoming #230 x resting #223)
+EXEC  4 @ 5237  (incoming #230 x resting #225)
+EXEC  2 @ 5235  (incoming #230 x resting #222)
+NOTE  #230  3 unfilled -- bid side of book is empty
+ORDER #231  LIMIT SELL 4 @ 5247
+REST  #231  SELL 4 @ 5247
+ORDER #232  LIMIT SELL 2 @ 5249
+REST  #232  SELL 2 @ 5249
+ORDER #233  MARKET SELL 12
+NOTE  #233  12 unfilled -- bid side of book is empty
+ORDER #234  LIMIT BUY 1 @ 5247
+EXEC  1 @ 5244  (incoming #234 x resting #227)
+CANCEL #189 FAILED: no SELL level at 5206
+ORDER #235  MARKET BUY 8
+EXEC  8 @ 5246  (incoming #235 x resting #229)
+ORDER #236  LIMIT SELL 5 @ 5251
+REST  #236  SELL 5 @ 5251
+ORDER #237  MARKET SELL 5
+NOTE  #237  5 unfilled -- bid side of book is empty
+ORDER #238  LIMIT BUY 6 @ 5249
+EXEC  1 @ 5246  (incoming #238 x resting #229)
+EXEC  4 @ 5247  (incoming #238 x resting #231)
+EXEC  1 @ 5249  (incoming #238 x resting #232)
+ORDER #239  LIMIT SELL 6 @ 5254
+REST  #239  SELL 6 @ 5254
+ORDER #240  LIMIT BUY 3 @ 5251
+EXEC  1 @ 5249  (incoming #240 x resting #232)
+EXEC  2 @ 5251  (incoming #240 x resting #236)
+ORDER #241  LIMIT SELL 7 @ 5258
+REST  #241  SELL 7 @ 5258
+ORDER #242  LIMIT BUY 7 @ 5253
+EXEC  3 @ 5251  (incoming #242 x resting #236)
+REST  #242  BUY 4 @ 5253
+ORDER #243  LIMIT BUY 10 @ 5255
+EXEC  6 @ 5254  (incoming #243 x resting #239)
+REST  #243  BUY 4 @ 5255
+ORDER #244  LIMIT BUY 6 @ 5255
+REST  #244  BUY 6 @ 5255
+CANCEL #168 FAILED: no BUY level at 5181
+ORDER #245  LIMIT SELL 4 @ 5260
+REST  #245  SELL 4 @ 5260
+ORDER #246  LIMIT SELL 10 @ 5262
+REST  #246  SELL 10 @ 5262
+ORDER #247  LIMIT BUY 3 @ 5256
+REST  #247  BUY 3 @ 5256
+ORDER #248  MARKET BUY 4
+EXEC  4 @ 5258  (incoming #248 x resting #241)
+ORDER #249  LIMIT BUY 1 @ 5258
+EXEC  1 @ 5258  (incoming #249 x resting #241)
+ORDER #250  LIMIT BUY 5 @ 5258
+EXEC  2 @ 5258  (incoming #250 x resting #241)
+REST  #250  BUY 3 @ 5258
+ORDER #251  MARKET BUY 8
+EXEC  4 @ 5260  (incoming #251 x resting #245)
+EXEC  4 @ 5262  (incoming #251 x resting #246)
+ORDER #252  MARKET BUY 1
+EXEC  1 @ 5262  (incoming #252 x resting #246)
+ORDER #253  MARKET SELL 15
+EXEC  3 @ 5258  (incoming #253 x resting #250)
+EXEC  3 @ 5256  (incoming #253 x resting #247)
+EXEC  4 @ 5255  (incoming #253 x resting #243)
+EXEC  5 @ 5255  (incoming #253 x resting #244)
+ORDER #254  LIMIT BUY 3 @ 5260
+REST  #254  BUY 3 @ 5260
+ORDER #255  LIMIT BUY 8 @ 5263
+EXEC  5 @ 5262  (incoming #255 x resting #246)
+REST  #255  BUY 3 @ 5263
+ORDER #256  LIMIT SELL 7 @ 5267
+REST  #256  SELL 7 @ 5267
+ORDER #257  LIMIT BUY 5 @ 5263
+REST  #257  BUY 5 @ 5263
+CANCEL #211 FAILED: no SELL level at 5227
+ORDER #258  MARKET BUY 3
+EXEC  3 @ 5267  (incoming #258 x resting #256)
+ORDER #259  LIMIT BUY 1 @ 5265
+REST  #259  BUY 1 @ 5265
+ORDER #260  LIMIT SELL 6 @ 5271
+REST  #260  SELL 6 @ 5271
+ORDER #261  LIMIT SELL 6 @ 5272
+REST  #261  SELL 6 @ 5272
+ORDER #262  LIMIT BUY 6 @ 5269
+EXEC  4 @ 5267  (incoming #262 x resting #256)
+REST  #262  BUY 2 @ 5269
+ORDER #263  MARKET BUY 8
+EXEC  6 @ 5271  (incoming #263 x resting #260)
+EXEC  2 @ 5272  (incoming #263 x resting #261)
+ORDER #264  LIMIT BUY 7 @ 5270
+REST  #264  BUY 7 @ 5270
+CANCEL #238 FAILED: no BUY level at 5249
+ORDER #265  LIMIT SELL 4 @ 5276
+REST  #265  SELL 4 @ 5276
+ORDER #266  LIMIT BUY 5 @ 5274
+EXEC  4 @ 5272  (incoming #266 x resting #261)
+REST  #266  BUY 1 @ 5274
+ORDER #267  LIMIT SELL 4 @ 5278
+REST  #267  SELL 4 @ 5278
+ORDER #268  LIMIT SELL 9 @ 5278
+REST  #268  SELL 9 @ 5278
+ORDER #269  MARKET SELL 14
+EXEC  1 @ 5274  (incoming #269 x resting #266)
+EXEC  7 @ 5270  (incoming #269 x resting #264)
+EXEC  2 @ 5269  (incoming #269 x resting #262)
+EXEC  1 @ 5265  (incoming #269 x resting #259)
+EXEC  3 @ 5263  (incoming #269 x resting #255)
+ORDER #270  LIMIT SELL 5 @ 5281
+REST  #270  SELL 5 @ 5281
+ORDER #271  LIMIT SELL 7 @ 5283
+REST  #271  SELL 7 @ 5283
+ORDER #272  LIMIT BUY 1 @ 5278
+EXEC  1 @ 5276  (incoming #272 x resting #265)
+ORDER #273  MARKET BUY 3
+EXEC  3 @ 5276  (incoming #273 x resting #265)
+ORDER #274  LIMIT BUY 1 @ 5282
+EXEC  1 @ 5278  (incoming #274 x resting #267)
+ORDER #275  LIMIT BUY 1 @ 5281
+EXEC  1 @ 5278  (incoming #275 x resting #267)
+ORDER #276  MARKET SELL 12
+EXEC  5 @ 5263  (incoming #276 x resting #257)
+EXEC  3 @ 5260  (incoming #276 x resting #254)
+EXEC  1 @ 5255  (incoming #276 x resting #244)
+EXEC  3 @ 5253  (incoming #276 x resting #242)
+ORDER #277  LIMIT BUY 8 @ 5285
+EXEC  2 @ 5278  (incoming #277 x resting #267)
+EXEC  6 @ 5278  (incoming #277 x resting #268)
+ORDER #278  LIMIT SELL 4 @ 5289
+REST  #278  SELL 4 @ 5289
+CANCEL #222 FAILED: no BUY level at 5235
+ORDER #279  LIMIT BUY 2 @ 5286
+EXEC  2 @ 5278  (incoming #279 x resting #268)
+ORDER #280  LIMIT SELL 3 @ 5292
+REST  #280  SELL 3 @ 5292
+ORDER #281  LIMIT BUY 5 @ 5290
+EXEC  1 @ 5278  (incoming #281 x resting #268)
+EXEC  4 @ 5281  (incoming #281 x resting #270)
+ORDER #282  LIMIT SELL 4 @ 5293
+REST  #282  SELL 4 @ 5293
+ORDER #283  LIMIT BUY 7 @ 5288
+EXEC  1 @ 5281  (incoming #283 x resting #270)
+EXEC  6 @ 5283  (incoming #283 x resting #271)
+ORDER #284  LIMIT SELL 1 @ 5294
+REST  #284  SELL 1 @ 5294
+ORDER #285  LIMIT SELL 4 @ 5295
+REST  #285  SELL 4 @ 5295
+ORDER #286  LIMIT SELL 9 @ 5297
+REST  #286  SELL 9 @ 5297
+ORDER #287  LIMIT SELL 1 @ 5298
+REST  #287  SELL 1 @ 5298
+ORDER #288  LIMIT BUY 2 @ 5293
+EXEC  1 @ 5283  (incoming #288 x resting #271)
+EXEC  1 @ 5289  (incoming #288 x resting #278)
+CANCEL #220 FAILED: no BUY level at 5234
+ORDER #289  MARKET SELL 14
+EXEC  1 @ 5253  (incoming #289 x resting #242)
+NOTE  #289  13 unfilled -- bid side of book is empty
+ORDER #290  LIMIT BUY 3 @ 5298
+EXEC  3 @ 5289  (incoming #290 x resting #278)
+ORDER #291  LIMIT SELL 10 @ 5302
+REST  #291  SELL 10 @ 5302
+ORDER #292  LIMIT SELL 5 @ 5304
+REST  #292  SELL 5 @ 5304
+ORDER #293  LIMIT BUY 4 @ 5301
+EXEC  3 @ 5292  (incoming #293 x resting #280)
+EXEC  1 @ 5293  (incoming #293 x resting #282)
+ORDER #294  LIMIT BUY 9 @ 5300
+EXEC  3 @ 5293  (incoming #294 x resting #282)
+EXEC  1 @ 5294  (incoming #294 x resting #284)
+EXEC  4 @ 5295  (incoming #294 x resting #285)
+EXEC  1 @ 5297  (incoming #294 x resting #286)
+ORDER #295  LIMIT SELL 8 @ 5307
+REST  #295  SELL 8 @ 5307
+ORDER #296  LIMIT SELL 7 @ 5308
+REST  #296  SELL 7 @ 5308
+ORDER #297  LIMIT SELL 10 @ 5308
+REST  #297  SELL 10 @ 5308
+ORDER #298  LIMIT SELL 10 @ 5308
+REST  #298  SELL 10 @ 5308
+ORDER #299  LIMIT SELL 9 @ 5308
+REST  #299  SELL 9 @ 5308
+ORDER #300  LIMIT SELL 7 @ 5309
+REST  #300  SELL 7 @ 5309
+ORDER #301  LIMIT SELL 8 @ 5311
+REST  #301  SELL 8 @ 5311
+ORDER #302  LIMIT SELL 1 @ 5312
+REST  #302  SELL 1 @ 5312
+ORDER #303  LIMIT BUY 1 @ 5307
+EXEC  1 @ 5297  (incoming #303 x resting #286)
+ORDER #304  LIMIT BUY 10 @ 5310
+EXEC  7 @ 5297  (incoming #304 x resting #286)
+EXEC  1 @ 5298  (incoming #304 x resting #287)
+EXEC  2 @ 5302  (incoming #304 x resting #291)
+CANCEL #264 FAILED: no BUY level at 5270
+ORDER #305  LIMIT SELL 10 @ 5316
+REST  #305  SELL 10 @ 5316
+ORDER #306  LIMIT BUY 5 @ 5310
+EXEC  5 @ 5302  (incoming #306 x resting #291)
+ORDER #307  LIMIT SELL 1 @ 5315
+REST  #307  SELL 1 @ 5315
+ORDER #308  LIMIT SELL 7 @ 5317
+REST  #308  SELL 7 @ 5317
+ORDER #309  LIMIT SELL 5 @ 5315
+REST  #309  SELL 5 @ 5315
+ORDER #310  LIMIT SELL 9 @ 5317
+REST  #310  SELL 9 @ 5317
+ORDER #311  MARKET SELL 10
+NOTE  #311  10 unfilled -- bid side of book is empty
+ORDER #312  LIMIT BUY 6 @ 5315
+EXEC  3 @ 5302  (incoming #312 x resting #291)
+EXEC  3 @ 5304  (incoming #312 x resting #292)
+ORDER #313  LIMIT BUY 6 @ 5314
+EXEC  2 @ 5304  (incoming #313 x resting #292)
+EXEC  4 @ 5307  (incoming #313 x resting #295)
+ORDER #314  LIMIT SELL 4 @ 5319
+REST  #314  SELL 4 @ 5319
+ORDER #315  LIMIT BUY 7 @ 5317
+EXEC  4 @ 5307  (incoming #315 x resting #295)
+EXEC  3 @ 5308  (incoming #315 x resting #296)
+ORDER #316  LIMIT SELL 1 @ 5322
+REST  #316  SELL 1 @ 5322
+ORDER #317  MARKET BUY 9
+EXEC  4 @ 5308  (incoming #317 x resting #296)
+EXEC  5 @ 5308  (incoming #317 x resting #297)
+ORDER #318  LIMIT BUY 9 @ 5320
+EXEC  5 @ 5308  (incoming #318 x resting #297)
+EXEC  4 @ 5308  (incoming #318 x resting #298)
+ORDER #319  LIMIT SELL 5 @ 5325
+REST  #319  SELL 5 @ 5325
+ORDER #320  MARKET SELL 9
+NOTE  #320  9 unfilled -- bid side of book is empty
+ORDER #321  LIMIT SELL 6 @ 5327
+REST  #321  SELL 6 @ 5327
+ORDER #322  LIMIT BUY 1 @ 5324
+EXEC  1 @ 5308  (incoming #322 x resting #298)
+ORDER #323  LIMIT SELL 3 @ 5329
+REST  #323  SELL 3 @ 5329
+ORDER #324  MARKET SELL 8
+NOTE  #324  8 unfilled -- bid side of book is empty
+ORDER #325  LIMIT SELL 10 @ 5332
+REST  #325  SELL 10 @ 5332
+ORDER #326  LIMIT BUY 2 @ 5328
+EXEC  2 @ 5308  (incoming #326 x resting #298)
+ORDER #327  LIMIT BUY 2 @ 5329
+EXEC  2 @ 5308  (incoming #327 x resting #298)
+ORDER #328  LIMIT SELL 5 @ 5334
+REST  #328  SELL 5 @ 5334
+CANCEL #266 FAILED: no BUY level at 5274
+CANCEL #290 FAILED: no BUY level at 5298
+ORDER #329  LIMIT SELL 4 @ 5338
+REST  #329  SELL 4 @ 5338
+ORDER #330  LIMIT SELL 10 @ 5339
+REST  #330  SELL 10 @ 5339
+ORDER #331  LIMIT BUY 10 @ 5335
+EXEC  1 @ 5308  (incoming #331 x resting #298)
+EXEC  9 @ 5308  (incoming #331 x resting #299)
+ORDER #332  LIMIT BUY 5 @ 5336
+EXEC  5 @ 5309  (incoming #332 x resting #300)
+ORDER #333  LIMIT BUY 6 @ 5336
+EXEC  2 @ 5309  (incoming #333 x resting #300)
+EXEC  4 @ 5311  (incoming #333 x resting #301)
+ORDER #334  LIMIT BUY 6 @ 5339
+EXEC  4 @ 5311  (incoming #334 x resting #301)
+EXEC  1 @ 5312  (incoming #334 x resting #302)
+EXEC  1 @ 5315  (incoming #334 x resting #307)
+ORDER #335  LIMIT SELL 5 @ 5340
+REST  #335  SELL 5 @ 5340
+ORDER #336  LIMIT SELL 3 @ 5343
+REST  #336  SELL 3 @ 5343
+ORDER #337  MARKET SELL 7
+NOTE  #337  7 unfilled -- bid side of book is empty
+ORDER #338  LIMIT SELL 7 @ 5343
+REST  #338  SELL 7 @ 5343
+ORDER #339  LIMIT BUY 2 @ 5342
+EXEC  2 @ 5315  (incoming #339 x resting #309)
+ORDER #340  MARKET BUY 10
+EXEC  3 @ 5315  (incoming #340 x resting #309)
+EXEC  7 @ 5316  (incoming #340 x resting #305)
+ORDER #341  LIMIT BUY 8 @ 5342
+EXEC  3 @ 5316  (incoming #341 x resting #305)
+EXEC  5 @ 5317  (incoming #341 x resting #308)
+CANCEL #341 FAILED: no BUY level at 5342
+ORDER #342  LIMIT SELL 7 @ 5350
+REST  #342  SELL 7 @ 5350
+ORDER #343  LIMIT SELL 3 @ 5350
+REST  #343  SELL 3 @ 5350
+ORDER #344  LIMIT SELL 9 @ 5350
+REST  #344  SELL 9 @ 5350
+ORDER #345  MARKET SELL 10
+NOTE  #345  10 unfilled -- bid side of book is empty
+ORDER #346  LIMIT SELL 5 @ 5352
+REST  #346  SELL 5 @ 5352
+ORDER #347  MARKET SELL 4
+NOTE  #347  4 unfilled -- bid side of book is empty
+ORDER #348  LIMIT BUY 6 @ 5350
+EXEC  2 @ 5317  (incoming #348 x resting #308)
+EXEC  4 @ 5317  (incoming #348 x resting #310)
+ORDER #349  LIMIT BUY 4 @ 5353
+EXEC  4 @ 5317  (incoming #349 x resting #310)
+ORDER #350  MARKET SELL 8
+NOTE  #350  8 unfilled -- bid side of book is empty
+ORDER #351  LIMIT SELL 4 @ 5357
+REST  #351  SELL 4 @ 5357
+ORDER #352  LIMIT SELL 2 @ 5360
+REST  #352  SELL 2 @ 5360
+ORDER #353  MARKET SELL 8
+NOTE  #353  8 unfilled -- bid side of book is empty
+ORDER #354  LIMIT SELL 7 @ 5362
+REST  #354  SELL 7 @ 5362
+ORDER #355  LIMIT SELL 1 @ 5363
+REST  #355  SELL 1 @ 5363
+ORDER #356  MARKET SELL 2
+NOTE  #356  2 unfilled -- bid side of book is empty
+ORDER #357  MARKET SELL 12
+NOTE  #357  12 unfilled -- bid side of book is empty
+ORDER #358  LIMIT SELL 10 @ 5365
+REST  #358  SELL 10 @ 5365
+ORDER #359  LIMIT SELL 7 @ 5366
+REST  #359  SELL 7 @ 5366
+ORDER #360  LIMIT SELL 6 @ 5366
+REST  #360  SELL 6 @ 5366
+ORDER #361  LIMIT SELL 2 @ 5367
+REST  #361  SELL 2 @ 5367
+ORDER #362  LIMIT BUY 1 @ 5364
+EXEC  1 @ 5317  (incoming #362 x resting #310)
+ORDER #363  LIMIT SELL 7 @ 5370
+REST  #363  SELL 7 @ 5370
+ORDER #364  LIMIT SELL 3 @ 5372
+REST  #364  SELL 3 @ 5372
+ORDER #365  LIMIT SELL 1 @ 5373
+REST  #365  SELL 1 @ 5373
+ORDER #366  LIMIT BUY 6 @ 5368
+EXEC  4 @ 5319  (incoming #366 x resting #314)
+EXEC  1 @ 5322  (incoming #366 x resting #316)
+EXEC  1 @ 5325  (incoming #366 x resting #319)
+ORDER #367  LIMIT BUY 2 @ 5370
+EXEC  2 @ 5325  (incoming #367 x resting #319)
+ORDER #368  LIMIT SELL 5 @ 5376
+REST  #368  SELL 5 @ 5376
+ORDER #369  LIMIT BUY 7 @ 5371
+EXEC  2 @ 5325  (incoming #369 x resting #319)
+EXEC  5 @ 5327  (incoming #369 x resting #321)
+ORDER #370  LIMIT SELL 6 @ 5377
+REST  #370  SELL 6 @ 5377
+ORDER #371  LIMIT SELL 9 @ 5377
+REST  #371  SELL 9 @ 5377
+ORDER #372  LIMIT SELL 4 @ 5379
+REST  #372  SELL 4 @ 5379
+ORDER #373  LIMIT SELL 4 @ 5377
+REST  #373  SELL 4 @ 5377
+CANCEL #322 FAILED: no BUY level at 5324
+ORDER #374  MARKET BUY 15
+EXEC  1 @ 5327  (incoming #374 x resting #321)
+EXEC  3 @ 5329  (incoming #374 x resting #323)
+EXEC  10 @ 5332  (incoming #374 x resting #325)
+EXEC  1 @ 5334  (incoming #374 x resting #328)
+ORDER #375  LIMIT BUY 1 @ 5375
+EXEC  1 @ 5334  (incoming #375 x resting #328)
+ORDER #376  LIMIT BUY 1 @ 5375
+EXEC  1 @ 5334  (incoming #376 x resting #328)
+ORDER #377  LIMIT SELL 3 @ 5382
+REST  #377  SELL 3 @ 5382
+ORDER #378  LIMIT BUY 10 @ 5377
+EXEC  2 @ 5334  (incoming #378 x resting #328)
+EXEC  4 @ 5338  (incoming #378 x resting #329)
+EXEC  4 @ 5339  (incoming #378 x resting #330)
+ORDER #379  LIMIT SELL 10 @ 5383
+REST  #379  SELL 10 @ 5383
+ORDER #380  LIMIT SELL 7 @ 5385
+REST  #380  SELL 7 @ 5385
+ORDER #381  MARKET SELL 15
+NOTE  #381  15 unfilled -- bid side of book is empty
+ORDER #382  LIMIT BUY 2 @ 5383
+EXEC  2 @ 5339  (incoming #382 x resting #330)
+ORDER #383  LIMIT BUY 1 @ 5382
+EXEC  1 @ 5339  (incoming #383 x resting #330)
+ORDER #384  MARKET SELL 11
+NOTE  #384  11 unfilled -- bid side of book is empty
+ORDER #385  MARKET BUY 7
+EXEC  3 @ 5339  (incoming #385 x resting #330)
+EXEC  4 @ 5340  (incoming #385 x resting #335)
+ORDER #386  MARKET BUY 13
+EXEC  1 @ 5340  (incoming #386 x resting #335)
+EXEC  3 @ 5343  (incoming #386 x resting #336)
+EXEC  7 @ 5343  (incoming #386 x resting #338)
+EXEC  2 @ 5350  (incoming #386 x resting #342)
+ORDER #387  LIMIT BUY 8 @ 5388
+EXEC  5 @ 5350  (incoming #387 x resting #342)
+EXEC  3 @ 5350  (incoming #387 x resting #343)
+ORDER #388  LIMIT BUY 3 @ 5387
+EXEC  3 @ 5350  (incoming #388 x resting #344)
+ORDER #389  LIMIT BUY 9 @ 5390
+EXEC  6 @ 5350  (incoming #389 x resting #344)
+EXEC  3 @ 5352  (incoming #389 x resting #346)
+CANCEL #365  removed 1 @ 5373
+ORDER #390  LIMIT SELL 10 @ 5393
+REST  #390  SELL 10 @ 5393
+ORDER #391  MARKET BUY 8
+EXEC  2 @ 5352  (incoming #391 x resting #346)
+EXEC  4 @ 5357  (incoming #391 x resting #351)
+EXEC  2 @ 5360  (incoming #391 x resting #352)
+ORDER #392  LIMIT BUY 2 @ 5392
+EXEC  2 @ 5362  (incoming #392 x resting #354)
+ORDER #393  MARKET SELL 12
+NOTE  #393  12 unfilled -- bid side of book is empty
+ORDER #394  MARKET SELL 4
+NOTE  #394  4 unfilled -- bid side of book is empty
+ORDER #395  LIMIT SELL 2 @ 5398
+REST  #395  SELL 2 @ 5398
+ORDER #396  LIMIT BUY 8 @ 5394
+EXEC  5 @ 5362  (incoming #396 x resting #354)
+EXEC  1 @ 5363  (incoming #396 x resting #355)
+EXEC  2 @ 5365  (incoming #396 x resting #358)
+ORDER #397  LIMIT BUY 1 @ 5397
+EXEC  1 @ 5365  (incoming #397 x resting #358)
+ORDER #398  LIMIT BUY 8 @ 5398
+EXEC  7 @ 5365  (incoming #398 x resting #358)
+EXEC  1 @ 5366  (incoming #398 x resting #359)
+ORDER #399  MARKET SELL 5
+NOTE  #399  5 unfilled -- bid side of book is empty
+ORDER #400  LIMIT SELL 10 @ 5404
+REST  #400  SELL 10 @ 5404
+ORDER #401  LIMIT SELL 1 @ 5405
+REST  #401  SELL 1 @ 5405
+ORDER #402  LIMIT SELL 10 @ 5405
+REST  #402  SELL 10 @ 5405
+ORDER #403  MARKET BUY 6
+EXEC  6 @ 5366  (incoming #403 x resting #359)
+ORDER #404  MARKET BUY 4
+EXEC  4 @ 5366  (incoming #404 x resting #360)
+ORDER #405  LIMIT SELL 4 @ 5407
+REST  #405  SELL 4 @ 5407
+ORDER #406  LIMIT SELL 5 @ 5410
+REST  #406  SELL 5 @ 5410
+ORDER #407  LIMIT SELL 4 @ 5409
+REST  #407  SELL 4 @ 5409
+CANCEL #389 FAILED: no BUY level at 5390
+ORDER #408  LIMIT BUY 2 @ 5408
+EXEC  2 @ 5366  (incoming #408 x resting #360)
+ORDER #409  MARKET BUY 8
+EXEC  2 @ 5367  (incoming #409 x resting #361)
+EXEC  6 @ 5370  (incoming #409 x resting #363)
+ORDER #410  LIMIT SELL 7 @ 5415
+REST  #410  SELL 7 @ 5415
+ORDER #411  LIMIT BUY 5 @ 5412
+EXEC  1 @ 5370  (incoming #411 x resting #363)
+EXEC  3 @ 5372  (incoming #411 x resting #364)
+EXEC  1 @ 5376  (incoming #411 x resting #368)
+ORDER #412  MARKET SELL 6
+NOTE  #412  6 unfilled -- bid side of book is empty
+ORDER #413  LIMIT SELL 2 @ 5417
+REST  #413  SELL 2 @ 5417
+ORDER #414  LIMIT SELL 9 @ 5419
+REST  #414  SELL 9 @ 5419
+ORDER #415  LIMIT BUY 5 @ 5414
+EXEC  4 @ 5376  (incoming #415 x resting #368)
+EXEC  1 @ 5377  (incoming #415 x resting #370)
+ORDER #416  LIMIT SELL 5 @ 5421
+REST  #416  SELL 5 @ 5421
+ORDER #417  LIMIT SELL 7 @ 5422
+REST  #417  SELL 7 @ 5422
+ORDER #418  LIMIT BUY 3 @ 5419
+EXEC  3 @ 5377  (incoming #418 x resting #370)
+ORDER #419  LIMIT SELL 5 @ 5424
+REST  #419  SELL 5 @ 5424
+ORDER #420  LIMIT SELL 8 @ 5424
+REST  #420  SELL 8 @ 5424
+ORDER #421  LIMIT SELL 9 @ 5424
+REST  #421  SELL 9 @ 5424
+ORDER #422  LIMIT SELL 3 @ 5425
+REST  #422  SELL 3 @ 5425
+ORDER #423  MARKET BUY 12
+EXEC  2 @ 5377  (incoming #423 x resting #370)
+EXEC  9 @ 5377  (incoming #423 x resting #371)
+EXEC  1 @ 5377  (incoming #423 x resting #373)
+ORDER #424  LIMIT SELL 7 @ 5427
+REST  #424  SELL 7 @ 5427
+ORDER #425  LIMIT SELL 6 @ 5428
+REST  #425  SELL 6 @ 5428
+CANCEL #342 FAILED: no SELL level at 5350
+ORDER #426  MARKET BUY 11
+EXEC  3 @ 5377  (incoming #426 x resting #373)
+EXEC  4 @ 5379  (incoming #426 x resting #372)
+EXEC  3 @ 5382  (incoming #426 x resting #377)
+EXEC  1 @ 5383  (incoming #426 x resting #379)
+ORDER #427  LIMIT SELL 2 @ 5431
+REST  #427  SELL 2 @ 5431
+ORDER #428  LIMIT BUY 3 @ 5430
+EXEC  3 @ 5383  (incoming #428 x resting #379)
+ORDER #429  LIMIT SELL 3 @ 5435
+REST  #429  SELL 3 @ 5435
+ORDER #430  LIMIT SELL 10 @ 5435
+REST  #430  SELL 10 @ 5435
+ORDER #431  MARKET SELL 14
+NOTE  #431  14 unfilled -- bid side of book is empty
+ORDER #432  LIMIT BUY 10 @ 5432
+EXEC  6 @ 5383  (incoming #432 x resting #379)
+EXEC  4 @ 5385  (incoming #432 x resting #380)
+CANCEL #411 FAILED: no BUY level at 5412
+ORDER #433  LIMIT SELL 2 @ 5438
+REST  #433  SELL 2 @ 5438
+ORDER #434  MARKET SELL 8
+NOTE  #434  8 unfilled -- bid side of book is empty
+CANCEL #359 FAILED: no SELL level at 5366
+ORDER #435  MARKET BUY 13
+EXEC  3 @ 5385  (incoming #435 x resting #380)
+EXEC  10 @ 5393  (incoming #435 x resting #390)
+ORDER #436  LIMIT BUY 5 @ 5440
+EXEC  2 @ 5398  (incoming #436 x resting #395)
+EXEC  3 @ 5404  (incoming #436 x resting #400)
+ORDER #437  LIMIT SELL 10 @ 5443
+REST  #437  SELL 10 @ 5443
+ORDER #438  LIMIT SELL 3 @ 5444
+REST  #438  SELL 3 @ 5444
+ORDER #439  LIMIT BUY 5 @ 5442
+EXEC  5 @ 5404  (incoming #439 x resting #400)
+ORDER #440  MARKET SELL 15
+NOTE  #440  15 unfilled -- bid side of book is empty
+ORDER #441  MARKET SELL 1
+NOTE  #441  1 unfilled -- bid side of book is empty
+ORDER #442  LIMIT SELL 9 @ 5449
+REST  #442  SELL 9 @ 5449
+ORDER #443  MARKET BUY 13
+EXEC  2 @ 5404  (incoming #443 x resting #400)
+EXEC  1 @ 5405  (incoming #443 x resting #401)
+EXEC  10 @ 5405  (incoming #443 x resting #402)
+ORDER #444  MARKET BUY 2
+EXEC  2 @ 5407  (incoming #444 x resting #405)
+ORDER #445  MARKET BUY 9
+EXEC  2 @ 5407  (incoming #445 x resting #405)
+EXEC  4 @ 5409  (incoming #445 x resting #407)
+EXEC  3 @ 5410  (incoming #445 x resting #406)
+ORDER #446  LIMIT SELL 4 @ 5450
+REST  #446  SELL 4 @ 5450
+ORDER #447  LIMIT SELL 2 @ 5453
+REST  #447  SELL 2 @ 5453
+CANCEL #373 FAILED: no SELL level at 5377
+ORDER #448  LIMIT SELL 10 @ 5454
+REST  #448  SELL 10 @ 5454
+ORDER #449  MARKET BUY 12
+EXEC  2 @ 5410  (incoming #449 x resting #406)
+EXEC  7 @ 5415  (incoming #449 x resting #410)
+EXEC  2 @ 5417  (incoming #449 x resting #413)
+EXEC  1 @ 5419  (incoming #449 x resting #414)
+ORDER #450  MARKET BUY 6
+EXEC  6 @ 5419  (incoming #450 x resting #414)
+---------------- BOOK ----------------
+  ASK      5425  x 3     
+  ASK      5424  x 22    
+  ASK      5422  x 7     
+  ASK      5421  x 5     
+  ASK      5419  x 2     
+  --------- spread ---------
+  (no bids)
+--------------------------------------
+
+# end-of-run tree report
+BID tree: 0 price levels, height 0, invariants OK
+ASK tree: 16 price levels, height 5, invariants OK
