@@ -53,3 +53,16 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# --- Whitelist: ignore everything not listed below ---
+*
+!*/
+!*.c
+!*.h
+!*.txt
+!*.csv
+!*.md
+!*.json
+!Makefile
+!makefile
+!.gitignore
